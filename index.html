@@ -764,7 +764,7 @@
         observer.observe(aboutSection);
 
         // Form submission handling
-        const contactForm = document.getElementById('contactForm');
+       /* const contactForm = document.getElementById('contactForm');
         
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -796,11 +796,36 @@
                 header.style.boxShadow = 'none';
                 header.style.background = '#fff';
             }
-        });
+        });*/
+
+    // ... existing JS code above ...
+
+    // Form submission handling for WhatsApp
+    const contactForm = document.getElementById('contactForm');
+
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        // Format message for WhatsApp
+        const phone = "260978295135"; // Your WhatsApp phone number (country code + number, no + or spaces)
+        const text = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+        const whatsappURL = `https://wa.me/${phone}?text=${text}`;
+
+        window.open(whatsappURL, '_blank');
+        contactForm.reset();
+    });
+
+    // ... rest of JS code ...
+        
     </script>
 </body>
 
 </html>
+
 
 
 
