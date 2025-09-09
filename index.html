@@ -139,74 +139,6 @@
             cursor: pointer;
         }
 
-        /* Mobile Navigation Styles - NEW */
-.mobile-nav-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 99;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-}
-
-.mobile-nav-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.mobile-nav {
-    position: fixed;
-    top: 0;
-    left: -300px;
-    width: 280px;
-    height: 100%;
-    background: #fff;
-    z-index: 100;
-    padding: 2rem;
-    transition: left 0.3s ease;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.mobile-nav.active {
-    left: 0;
-}
-
-.mobile-nav-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #eee;
-}
-
-.mobile-nav-links li {
-    margin-bottom: 1.5rem;
-}
-
-.mobile-nav-links a {
-    color: var(--dark-color);
-    font-weight: 600;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
-}
-
-.mobile-nav-links a:hover {
-    color: var(--primary-color);
-}
-
-.close-nav {
-    cursor: pointer;
-    font-size: 1.5rem;
-    color: var(--dark-color);
-}
-
-
-        
       
         /* Hero Section */
         .hero {
@@ -540,7 +472,7 @@
                 margin-bottom: 1rem;
             }
 
-          /*  .nav-links {
+           .nav-links {
                 flex-direction: column;
                 text-align: center;
             }
@@ -563,28 +495,8 @@
 
             .nav-links.active {
                 display: flex;
-            }*/
+            }
 
-            /* Updated responsive design for navbar */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: row; /* Changed from column */
-        padding: 1rem 0;
-    }
-
-    .logo {
-        margin-bottom: 1rem; /* Changed from 1rem */
-    }
-
-    .nav-links {
-        display: none;
-    }
-
-    .hamburger {
-        display: block;
-        position: absolute; /* Changed from absolute */
-        font-size: 1.5rem;
-    }
 
             .hero-text h1 {
                 font-size: 2.5rem;
@@ -601,28 +513,8 @@
     <!-- Header -->
     <header>
         
-<!-- Mobile Navigation Overlay -->
-<div class="mobile-nav-overlay" id="navOverlay"></div>
 
-<!-- Mobile Navigation Sidebar -->
         <div class="container">
-            <nav class="navbar">
-<div class="mobile-nav" id="mobileNav">
-    <div class="hamburger">
-        <a href="#" class="logo">Port<span>folio</span></a>
-        <div class="close-nav" id="closeNav">
-            <i class="fas fa-bars"></i>
-        </div>
-        </div>
-    </div>
-    <ul class="mobile-nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</div>
-        <!--<div class="container">
             <nav class="navbar">
                 <a href="#" class="logo">Port<span>folio</span></a>
                 <div class="hamburger">
@@ -635,7 +527,7 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-        </div>-->
+        </div>
     </header>
 
     <!-- Hero Section -->
@@ -837,36 +729,9 @@
 
     <script>
 
+
         // Mobile Navigation
-const hamburger = document.getElementById('hamburger');
-const closeNav = document.getElementById('closeNav');
-const mobileNav = document.getElementById('mobileNav');
-const navOverlay = document.getElementById('navOverlay');
-
-function openMobileNav() {
-    mobileNav.classList.add('active');
-    navOverlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
-
-function closeMobileNav() {
-    mobileNav.classList.remove('active');
-    navOverlay.classList.remove('active');
-    document.body.style.overflow = 'auto';
-}
-
-hamburger.addEventListener('click', openMobileNav);
-closeNav.addEventListener('click', closeMobileNav);
-navOverlay.addEventListener('click', closeMobileNav);
-
-// Close mobile nav when clicking on a link
-document.querySelectorAll('.mobile-nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        closeMobileNav();
-    });
-});
-        // Mobile Navigation
-      /*  const hamburger = document.querySelector('.hamburger');
+        const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
 
         hamburger.addEventListener('click', () => {
@@ -878,7 +743,7 @@ document.querySelectorAll('.mobile-nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
             });
-        });*/
+        });
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -984,6 +849,7 @@ document.querySelectorAll('.mobile-nav-links a').forEach(link => {
 </body>
 
 </html>
+
 
 
 
